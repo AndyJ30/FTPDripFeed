@@ -102,7 +102,7 @@ while ($fileBatch.Count -gt 0) {
     }
 
     #Load the next batch of files
-    $fileBatch = Get-ChildItem $localDirectory | Where-Object { -not $_.PsIsContainer } | Sort-Object LastWriteTime | Select-Object -first 10
+    $fileBatch = Get-ChildItem $localDirectory | Where-Object { -not $_.PsIsContainer } | Sort-Object LastWriteTime | Select-Object -first $batchSize
 
 }
 
